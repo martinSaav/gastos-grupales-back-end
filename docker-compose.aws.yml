@@ -9,6 +9,7 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
       - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+      - USER_POOL_ID=${USER_POOL_ID}
       - JAVA_TOOL_OPTIONS=-Xms128m -Xmx256m -XX:+UseG1GC -XX:MaxGCPauseMillis=200
     mem_limit: 512m
     cpus: "0.50"

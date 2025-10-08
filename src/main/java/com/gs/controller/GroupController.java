@@ -1,7 +1,7 @@
 package com.gs.controller;
 
-import com.gs.service.GroupService;
 import com.gs.service.IGroupService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,6 +15,7 @@ public class GroupController {
         this.groupService = groupService;
     }
 
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/{id}")
     public Object getGroupById(@PathVariable Long id) {
         return groupService.getGroupById(id);
