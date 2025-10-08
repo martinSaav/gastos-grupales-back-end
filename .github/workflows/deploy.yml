@@ -34,11 +34,5 @@ jobs:
             echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env.aws
             echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env.aws
             echo "SPRING_PROFILES_ACTIVE=prod" >> .env.aws
-            echo "KC_HOSTNAME=${{ secrets.KC_HOSTNAME }}" >> .env.aws
-            echo "KEYCLOAK_ADMIN=${{ secrets.KEYCLOAK_ADMIN }}" >> .env.aws
-            echo "KEYCLOAK_ADMIN_PASSWORD=${{ secrets.KEYCLOAK_ADMIN_PASSWORD }}" >> .env.aws
-            echo "KC_DB_URL=${{ secrets.KC_DB_URL }}" >> .env.aws
-            echo "KC_DB_USERNAME=${{ secrets.KC_DB_USERNAME }}" >> .env.aws
-            echo "KC_DB_PASSWORD=${{ secrets.KC_DB_PASSWORD }}" >> .env.aws
             docker compose down
             docker compose -f docker-compose.aws.yml --env-file .env.aws up -d --build
