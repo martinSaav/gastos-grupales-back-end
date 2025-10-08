@@ -34,5 +34,6 @@ jobs:
             echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env.aws
             echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env.aws
             echo "SPRING_PROFILES_ACTIVE=prod" >> .env.aws
+            echo "USER_POOL_ID=${{ secrets.USER_POOL_ID }}" >> .env.aws
             docker compose down
             docker compose -f docker-compose.aws.yml --env-file .env.aws up -d --build
